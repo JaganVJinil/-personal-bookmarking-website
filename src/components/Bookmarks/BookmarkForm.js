@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addBookmark, updateBookmark } from '../../redux/bookmarkSlice';
 import { useNavigate, useParams } from 'react-router-dom';
+import bgImage from '../../assets/bookmarklogin.webp'; // Adjust path as needed
 
 const BookmarkForm = ({ editMode = false }) => {
   const { id } = useParams();
@@ -44,6 +45,19 @@ const BookmarkForm = ({ editMode = false }) => {
   };
 
   return (
+    <div
+      className="container-fluid"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}
+    >
+    
     <div className="container mt-4">
       <div className="row justify-content-center">
         <div className="col-md-6">
@@ -87,6 +101,7 @@ const BookmarkForm = ({ editMode = false }) => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

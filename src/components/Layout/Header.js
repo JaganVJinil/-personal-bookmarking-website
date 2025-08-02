@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">
       <div className="container">
-        <Link className="navbar-brand" to="/"><h2><b>Bookmarking-Website</b></h2></Link>
+        <Link className="navbar-brand" to="/"><h2><b>📖 Bookmarking-Website</b></h2></Link>
 
         {/* Hamburger button for small screens */}
         <button
@@ -37,25 +37,25 @@ const Header = () => {
             {user ? (
               <>
                 <li className="nav-item">
-                  <span className="nav-link disabled"><b>Welcome, </b><strong><b>{user.username}</b></strong></span>
+                  <b><span className="nav-link disabled"><b>Welcome</b> <b>{user.username}</b></span></b>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/bookmarks">Bookmarks</Link>
+                  <Link className="nav-link" to="/bookmarks"><b>Bookmarks</b></Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/add">Add Bookmark</Link>
+                  <Link className="nav-link" to="/add"><b>Add Bookmark</b></Link>
                 </li>
                 <li className="nav-item">
-                  <button className="btn btn-link nav-link" onClick={handleLogout}>Logout</button>
+                  <button className="btn btn-link nav-link" onClick={handleLogout}><b>Logout</b></button>
                 </li>
               </>
             ) : (
               <>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/signup">Signup</Link>
+                  <Link className="nav-link" to="/signup"><b>Signup</b></Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/login">Login</Link>
+                  <Link className="nav-link" to="/login"><b>🔐Login🔐</b></Link>
                 </li>
               </>
             )}

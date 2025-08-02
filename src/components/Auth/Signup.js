@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { signup } from '../../redux/authSlice';
 import { useNavigate } from 'react-router-dom';
+import bgImage from '../../assets/bookmarklogin.webp'; // Adjust path as needed
 
 const Signup = () => {
   const [form, setForm] = useState({ username: '', password: '' });
@@ -26,6 +27,19 @@ const Signup = () => {
   };
 
   return (
+    <div
+      className="container-fluid"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}
+    >
+
     <div className="container mt-5">
       <div className="row justify-content-center">
         <div className="col-md-6">
@@ -65,6 +79,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

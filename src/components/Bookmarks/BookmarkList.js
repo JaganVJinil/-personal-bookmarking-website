@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { deleteBookmark, loadBookmarks } from '../../redux/bookmarkSlice';
 import { useNavigate } from 'react-router-dom';
 import SearchBar from './SearchBar';
+import bgImage from '../../assets/bookmarklogin.webp'; // Adjust path as needed
+
 
 const ITEMS_PER_PAGE = 3;
 
@@ -43,7 +45,19 @@ const BookmarkList = () => {
   };
 
   return (
-    <div className="container mt-4">
+    <div
+      className="container-fluid"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}
+    >
+    <div className="container mt">
       <h2 className="mb-4 text-center">Your Bookmarks</h2>
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
@@ -88,6 +102,7 @@ const BookmarkList = () => {
           )}
         </>
       )}
+    </div>
     </div>
   );
 };
